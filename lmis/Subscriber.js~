@@ -1,0 +1,46 @@
+/**
+   File: subscriber.js
+   Author(s): Pierre Abraham Mulamba
+   Date of creation (modification): 20210205 (20210205)
+   
+*/
+
+//let method = Subscriber.prototype;
+
+class Subscriber{
+    constructor(idNumber, firstName, lastName, age){
+        this.idNumber = idNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    getIdNumber = function(){
+        return this.idNumber;
+    };
+
+    getFirstName = function(){
+        return this.firstName;
+    };
+
+    getLastName = function(){
+        return this.lastName;
+    };
+
+    getAge = function(){
+        return this.age;
+    };
+
+    setIdNumber = function(idNumber){
+        this.idNumber = idNumber;
+    };
+
+    print = function(){
+        console.log(this.lastName +', '+ this.firstName + '.' + ' #'+this.idNumber);
+    }
+    
+}
+
+
+
+
+module.exports.Subscriber = Subscriber;

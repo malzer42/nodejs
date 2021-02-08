@@ -1,0 +1,68 @@
+/**
+   File: book.js
+   Author(s): Pierre Abraham Mulamba
+   Date of creation (modification): 20210205 (20210205)
+   
+*/
+
+let method = Book.prototype;
+
+function Book(quote, title, year, minimal_age, n_possess, n_available, nBooks){
+    this._quote = quote;
+    this._title = title;
+    this._year = year;
+    this._minimal_age = minimal_age;
+    this._n_possess = n_possess;
+    this._n_available = n_available;
+    this._nBooks = nBooks;
+}
+
+// Accessors
+method.getQuote = function(){
+    return this._quote;
+};
+
+method.getTitle = function(){
+    return this._title;
+};
+
+method.getYear = function(){
+    return this._year;
+};
+
+method.getMinimalAge = function(){
+    return this._minimal_age;
+};
+
+method.getNpossess = function(){
+    return this._n_possess;
+}
+
+method.getNavailable = function(){
+    return this._n_available;
+}
+
+method.getNbooks = function(){
+    return this._nBooks;
+}
+
+// Mutators
+method.setQuote = function(quote){
+    this._quote = quote;
+};
+
+
+method.setTitle = function(title){
+    this._title = title;
+};
+
+method.setYear = function(year){
+    this._year = year;
+}
+
+method.print = function(){
+    console.log(this.lastName +', '+ this.firstName + '.' + ' #'+this.idNumber);
+}
+
+
+module.exports = Subscriber;
