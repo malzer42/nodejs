@@ -10,13 +10,14 @@
 let Subscriber = require("./Subscriber.js");
 let Book = require("./Book.js");
 let Borrow = require("./Borrow.js");
+let Library = require("./Library.js");
 const today = new Date();
 
 
 try{
 
     console.log(today);
-
+    
     console.log("\nIF YOU FAIL TO PLAN FOR FAILURES, YOU ARE PLANNING TO FAIL\n")
     console.log("LIBRARY MANAGEMENT INVENTORY SYSTEM");
     console.log("INTEGRATION TEST PROGRAM");
@@ -52,16 +53,31 @@ try{
     const borrow1 = new Borrow(sub1, book2, 2020);
     const borrow2 = new Borrow(sub2, book1, 2020);
 
-    borrow1.print();
-    borrow2.print();
-    
     /** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** */
     /* BEGINNING OF TESTS */
     /* Les modifications restantes sont a la fin de la fonction main. */
     /** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** */
 
-    console.log("\nADDING OF BOOKS AND SUBSCRIBERS TO THE LIBRARY\n");
-    
+    console.log("\nADDING OF BOOKS AND SUBSCRIBERS TO THE LIBRARY");
+    console.log(Library);
+    const library = new Library();
+    library.addSubscriber(sub1);
+    library.addSubscriber(sub2);
+    library.addSubscriber(sub3);
+    library.addBook(book1);
+    library.addBook(book2);
+    library.addBook(book3);
+    library.addBook(book4);
+    library.addBook(book5);
+    library.addBook(book6);
+    library.addBook(book7);
+    console.log(library);
+    const idNumber = '1269348';
+    library.delSubscriber(idNumber);
+    const quote = 'CE413';
+    library.delBook(quote);
+
+
 }catch(err){
     console.log("Unknown Error Thrown");
 }
