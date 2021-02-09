@@ -91,6 +91,9 @@ try{
     const quote_to_search = 'QA204';
     library.searchBookByQuote(quote_to_search);
     library.searchBookByQuote(quote);
+
+    library.print();
+    
     
     console.log("\n\tPROGRAM ENDED SUCCESSFULLY\n");
 

@@ -138,9 +138,27 @@ class Library
         }
     }
 
+    /**
+     * Printing methods
+     */
+    print()
+    {
+        if(this._subs.lenght != 0)
+        {
+            console.log("\n\tPrinting the Subscribers of the Library ...\n");
+            for(let sub of this._subs){
+                sub.print();
+            }
+        }
 
+        if(this._books.length != 0)
+        {
+            console.log("\n\tPrinting the Books of the Library ...\n");
+            for(let book of this._books) book.print();
+        }
 
-
+    }
 }
+
 
 module.exports = Library;
