@@ -45,10 +45,19 @@ class Library
         this._borrows = borrows;
     }
 
+    // Processing subscribers in the Library
+    /**
+     * Adding an instance of Subscriber to the list of Subscribers
+     * @param subscriber: a subscriber instance to be added
+     */
     addSubscriber(subscriber){
         this._subs.push(subscriber);
     }
 
+    /**
+     * Remove an instance of a Subscriber to the list of Subscribesr
+     * @param idNumber: the idNumber of an instance to be removed
+     */
     delSubscriber(idNumber)
     {
         for(let i = 0; i < this._subs.length; i++){
@@ -58,6 +67,7 @@ class Library
         }
     }
 
+    // Processing books in the Library
     addBook(book){
 
         this._books.push(book);
@@ -71,6 +81,12 @@ class Library
             }
         }
     }
+
+    // Processing borrows in the Library
+    addBorrow(borrow){
+        this._borrows.push(borrow);
+    }
+
 
 }
 

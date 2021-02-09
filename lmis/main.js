@@ -48,7 +48,7 @@ try{
     book6.print();
     book7.print();
 
-    console.log("\nBORROWING A BOOK BY A SUBSCRIBER")
+    console.log("\nCREATING OF BORROWS")
     console.log(Borrow);
     const borrow1 = new Borrow(sub1, book2, 2020);
     const borrow2 = new Borrow(sub2, book1, 2020);
@@ -58,7 +58,7 @@ try{
     /* Les modifications restantes sont a la fin de la fonction main. */
     /** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** */
 
-    console.log("\nADDING OF BOOKS AND SUBSCRIBERS TO THE LIBRARY");
+    console.log("\nADDING OF BOOKS, BORROWS, AND SUBSCRIBERS TO THE LIBRARY");
     console.log(Library);
     const library = new Library();
     library.addSubscriber(sub1);
@@ -71,12 +71,16 @@ try{
     library.addBook(book5);
     library.addBook(book6);
     library.addBook(book7);
+    library.addBorrow(borrow1);
+    library.addBorrow(borrow2);
     console.log(library);
     const idNumber = '1269348';
     library.delSubscriber(idNumber);
     const quote = 'CE413';
     library.delBook(quote);
-
+    console.log(library);
+    console.log(library._borrows);
+    console.log("\nPROGRAM ENDED SUCCESSFULLY");
 
 }catch(err){
     console.log("Unknown Error Thrown");
