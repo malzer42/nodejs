@@ -73,6 +73,7 @@ try{
     library.addBook(book7);
     library.addBorrow(borrow1);
     library.addBorrow(borrow2);
+
     console.log(library);
     const idNumber = '1269348';
     library.delSubscriber(idNumber);
@@ -80,6 +81,13 @@ try{
     library.delBook(quote);
     console.log(library);
     console.log(library._borrows);
+
+    let title_to_search = 'Big C++';
+    library.searchBookByTitle(title_to_search);
+    
+    let title = 'Harry';
+    library.searchBookByTitle(title);
+    
     console.log("\nPROGRAM ENDED SUCCESSFULLY");
 
 }catch(err){

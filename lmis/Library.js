@@ -76,7 +76,8 @@ class Library
     delBook(quote)
     {
         for(let i = 0; i < this._books.length; i++ ){
-            if(this._books[i].getQuote() == quote){
+            if(this._books[i].getQuote() == quote)
+            {
                 this._books.splice(i,1);
             }
         }
@@ -87,6 +88,32 @@ class Library
         this._borrows.push(borrow);
     }
 
+    // Searching, borrowing, returning, displaying methods
+
+    /**
+     * Searching instances of a Book by title
+     * @param title: title of the book to be searched
+     */
+    
+    searchBookByTitle(book_title)
+    {
+        let isPresent = false;
+        
+        for(let j = 0; j < this._books.length; j++){
+            if(this._books[j].getTitle() == book_title)
+            {
+                isPresent = true;
+                console.log("\nPrinting the details of the book with title: "+book_title);
+                this._books[j].print();
+            }
+        }
+        
+        if(!isPresent)
+        {
+            console.log("\n!!!No book with the title: "+book_title+"  found in the Library");
+        }
+        
+    }
 
 }
 
