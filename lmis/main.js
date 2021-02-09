@@ -82,13 +82,17 @@ try{
     console.log(library);
     console.log(library._borrows);
 
-    let title_to_search = 'Big C++';
+    const title_to_search = 'Big C++';
     library.searchBookByTitle(title_to_search);
     
-    let title = 'Harry';
+    const title = 'Harry';
     library.searchBookByTitle(title);
+
+    const quote_to_search = 'QA204';
+    library.searchBookByQuote(quote_to_search);
+    library.searchBookByQuote(quote);
     
-    console.log("\nPROGRAM ENDED SUCCESSFULLY");
+    console.log("\n\tPROGRAM ENDED SUCCESSFULLY\n");
 
 }catch(err){
     console.log("Unknown Error Thrown");

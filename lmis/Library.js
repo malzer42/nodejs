@@ -99,12 +99,12 @@ class Library
     {
         let isPresent = false;
         
-        for(let j = 0; j < this._books.length; j++){
-            if(this._books[j].getTitle() == book_title)
+        for(let book of this._books){
+            if(book.getTitle() == book_title)
             {
                 isPresent = true;
-                console.log("\nPrinting the details of the book with title: "+book_title);
-                this._books[j].print();
+                console.log("\nDetails of the book with the title: "+book_title);
+                book.print();
             }
         }
         
@@ -112,8 +112,34 @@ class Library
         {
             console.log("\n!!!No book with the title: "+book_title+"  found in the Library");
         }
-        
     }
+
+    /**
+     * Searching instances of a Book by quote
+     * @param book_quote: the quote of the book to be searched
+     */
+    
+    searchBookByQuote(book_quote)
+    {
+        let isFound = false;
+        
+        for(let book of this._books){
+            if(book.getQuote() == book_quote)
+            {
+                isFound = true;
+                console.log("\nDetails of the book with the quote: "+book_quote);
+                book.print();
+            }
+        }
+        
+        if(!isFound)
+        {
+            console.log("\n!!!No book with the quote: "+book_quote+"  found in the Library");
+        }
+    }
+
+
+
 
 }
 
