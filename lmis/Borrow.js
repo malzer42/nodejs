@@ -11,9 +11,13 @@ class Borrow
 {
     constructor(subscriber, book, book_return_date)
     {
-        /*let subscriber = new Subscriber(sub.getIdNumber(), sub.getFirstName(), sub.getLastName(), sub.getAge());
-        let book_obj = new Book(book.getQuote(), book.getTitle(), book.getYear(), book.getMinimalAge(), 
-                            book.getNpossess(), book.getNavailable(), book.getNbooks());*/
+        /** let subscriber = new Subscriber(sub.getIdNumber(), 
+           sub.getFirstName(), sub.getLastName(), sub.getAge());
+           let book_obj = new Book(book.getQuote(), book.getTitle(), 
+           book.getYear(), book.getMinimalAge(), 
+           book.getNpossess(), book.getNavailable(), 
+           book.getNbooks());
+        */
         this._subscriber = subscriber;
         this._book = book;
         this._book_return_date = book_return_date;

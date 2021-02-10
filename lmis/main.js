@@ -54,8 +54,8 @@ try{
     const borrow2 = new Borrow(sub2, book1, 2020);
 
     /** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** */
-    /* BEGINNING OF TESTS */
-    /* Les modifications restantes sont a la fin de la fonction main. */
+    /* BEGINNING OF TESTS                                                                               */
+    /* Remaining modification are at the end of the main function.                                      */
     /** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** */
 
     console.log("\nADDING OF BOOKS, BORROWS, AND SUBSCRIBERS TO THE LIBRARY");
@@ -71,29 +71,117 @@ try{
     library.addBook(book5);
     library.addBook(book6);
     library.addBook(book7);
-    library.addBorrow(borrow1);
-    library.addBorrow(borrow2);
+    
+    console.log("\n/*******************************************************************/\n");
+    console.log("/*                      BEGINNING OF TESTS                         */\n");
+    console.log("/* Remaining modification are at the bottom of main function    .  */\n");
+    console.log("/*******************************************************************/\n");
 
-    console.log(library);
-    const idNumber = '1269348';
-    library.delSubscriber(idNumber);
-    const quote = 'CE413';
-    library.delBook(quote);
-    console.log(library);
-    console.log(library._borrows);
-
+    console.log("\n\t\tSEARCHING BOOKS BY TITLE");
+    console.log("Search for a title containing: Big C++");
     const title_to_search = 'Big C++';
     library.searchBookByTitle(title_to_search);
-    
+
+    console.log("Search for a title containing: Harry");
     const title = 'Harry';
     library.searchBookByTitle(title);
 
-    const quote_to_search = 'QA204';
+    
+    console.log("\n\t\tSEARCHING BOOKS BY QUOTE");
+    console.log("Search for a quote containing: AC409");
+    const quote_to_search = 'AC409';
     library.searchBookByQuote(quote_to_search);
+
+    console.log("Search for a quote containing: BD302");
+    const quote = 'BD302';
     library.searchBookByQuote(quote);
 
-    library.print();
-    
+    console.log("\n\t\tTESTING THE BORROWING");
+    console.log("\n// Should fail because Nicolas is too young! AC409 <--> 1630236\n");
+    if (library.borrowBookBySubscriber("1630236", "AC409", "160204"))
+    {
+        console.log("AC409 borrowed by 1630236\n");
+    }
+    else{
+        console.log("(Fail)!!!BORROWING OF AC409 by 1630236 failed because the Subscriber Nicolas is too young!!!\n");
+    }
+
+    console.log("\n// Should work. BD302 borrowed by 1630236\n");
+    if (library.borrowBookBySubscriber("1630236", "BD302", "160204"))
+    {
+        console.log("(Pass)BD302 borrowed by 1630236\n");
+    }
+    else{
+        console.log("!!!BORROWING BD302 by 1630236 failed!!!\n");
+    }
+
+    console.log("\n// Should not work because the book is not available anymore\n");
+    if (library.borrowBookBySubscriber("1839456", "BD302", "160204"))
+    {
+        console.log("BD302 borrowed by 1839456\n");
+    }
+    else{
+        console.log("(Fail)!!!BORROWING BD302 by 1839456 failed because the book is not Available!!!\n");
+    }
+
+    console.log("\n// Should not work because the subscriber has the book\n");
+    if (library.borrowBookBySubscriber("1630236", "BD302", "160204"))
+    {
+        console.log("BD302 borrowed by 1630236\n");
+    }
+    else{
+        console.log("(Fail)!!!BORROWING BD302 by 1630236 failed because the Subscriber has the book!!!\n");
+    }
+
+    console.log("\n// Should work\n");
+    if(library.borrowBookBySubscriber("1630236", "QA204", "160204"))
+    {
+        console.log("(Pass)QA204 borrowed by 1630236\n");
+    }
+    else{
+        console.log("!!!BORROWING QA204 by 1630236 failed!!!\n");
+    }
+
+    console.log("\n// Should not work because the subscriber has reached the limit of books to borrow\n");
+    if (library.borrowBookBySubscriber("1630236", "QA203", "160204"))
+    {
+        console.log("QA203 borrowed by 1630236\n");
+    }
+    else {
+        console.log("(Fail)!!!BORROWING QA203 by 1630236 failed because the limit is exceeded!!!\n");
+    }
+
+    // Info of a subscriber before returning a book
+    console.log("\n\t\tINFO OF A SUBSCRIBER BEFORE RETURNING A BOOK.\n");
+    library.infoSubscriber("1630236");
+
+    console.log("\n\t\tTESTS ON BOOKS RETURN.\n");
+
+    console.log("// should work\n");
+    if (library.returnBook("1630236", "QA204"))
+    {
+        console.log("(Pass)QA204 return by 1630236\n");
+    }
+    else{
+        console.log("!!!Returning of BD302 by 1630236 Failed!!!\n");
+    }
+
+    console.log("// Should not work because the subscriber never borrowed a book\n");
+    if (library.returnBook("1839456", "QA203"))
+    {
+        console.log("QA203 return by 1839456\n");
+    }
+    else{
+        console.log("(Fail)!!!Returning failed because the Subscriber 1839456 never borrowed a book!!!\n");
+    }
+
+    // Info of a Subscriber after returning a book
+    console.log("\n\t\tINFO OF A SUBSCRIBER AFTER RETURNING A BOOK.\n");
+    library.infoSubscriber("1630236");
+
+    console.log("/*********************************/");
+    console.log("/*       END OF TESTS            */");
+    console.log("/*********************************/");
     
     console.log("\n\tPROGRAM ENDED SUCCESSFULLY\n");
 

@@ -62,6 +62,18 @@ class Book
         this._year = year;
     };
 
+    setMinimalAge(minimal_age){
+        this._minimal_age = minimal_age;
+    };
+
+    setNavailable(n_available){
+        this._n_available = n_available;
+    };
+
+    setNpossess(n_possess){
+        this._n_possess = n_possess;
+    };
+
     print(){
         console.log(this.getQuote() +'. '+ this.getTitle() + '. ' + this.getMinimalAge() + ' y.o.');
     };
